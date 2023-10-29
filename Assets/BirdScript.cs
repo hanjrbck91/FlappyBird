@@ -6,7 +6,8 @@ public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidbody2d;
     public float flapStrength;
-    public LogicScript logic;
+    [HideInInspector] public LogicScript logic;
+
     public bool birdIsAlive = true;
 
     // Start is called before the first frame update
@@ -29,5 +30,6 @@ public class BirdScript : MonoBehaviour
     {
         logic.gameOver();
         birdIsAlive = false;
+
     }
 }

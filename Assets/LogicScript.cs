@@ -20,6 +20,7 @@ public class LogicScript : MonoBehaviour
     //Restart game
     public void restartGame()
     {
+        Time.timeScale = 1;
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -29,6 +30,7 @@ public class LogicScript : MonoBehaviour
         gameOverScreen.SetActive(true);
     }
 
+  
 
     
 }

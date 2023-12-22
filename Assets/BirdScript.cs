@@ -7,13 +7,14 @@ public class BirdScript : MonoBehaviour
     public Rigidbody2D myRigidbody2d;
     public float flapStrength;
     [HideInInspector] public LogicScript logic;
+    [SerializeField] private Animator animator;
 
     public bool birdIsAlive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        animator.enabled = true;
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     } 
 
@@ -30,6 +31,15 @@ public class BirdScript : MonoBehaviour
     {
         logic.gameOver();
         birdIsAlive = false;
+        Invoke("PauseGame", 2);
+        var animator = gameObject.GetComponent<Animator>();
+        animator.enabled = false;
 
+
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
     }
 }

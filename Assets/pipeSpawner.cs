@@ -27,11 +27,12 @@ public class pipeSpawner : MonoBehaviour
             timer = 0;
         }
     }
-
+    public float lowestPoint;
+    public float heighestPoint;
     void spawnPipe()
     {
-        float lowestPoint = transform.position.y - (heightOffset*0.5f);
-        float heighestPoint = transform.position.y + (heightOffset * 0.5f);
+        //lowestPoint = transform.position.y - (heightOffset*0.5f);
+        //heighestPoint = transform.position.y + (heightOffset * 0.5f);
         Instantiate(pipe, new Vector3(transform.position.x,Random.Range(lowestPoint,heighestPoint),0), transform.rotation);
     }
 }
